@@ -26,10 +26,10 @@ set :linked_files, %w{config/database.yml}
 
 namespace :deploy do
 
-  desc 'Restart application'
-  task :restart do
-    invoke 'unicorn:restart'
-  end
+  # desc 'Restart application'
+  # task :restart do
+  #   invoke 'unicorn:restart'
+  # end
 
   # desc 'Verify local repo is updated'
   # after :finished, :check_revision do
@@ -42,7 +42,7 @@ namespace :deploy do
   #   end
   # end
 
-  after 'deploy:publishing', 'deploy:restart'
+  # after 'deploy:publishing', 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 
 end
