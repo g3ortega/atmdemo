@@ -18,7 +18,7 @@ set :repo_url, 'git@github.com:g3ortega/atmdemo.git'
 
 # set :linked_files, %w{config/database.yml}
 set :linked_dirs, ['tmp/pids']
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/secrets.yml config/database.yml}
 
 
 # Default value for keep_releases is 5
