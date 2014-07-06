@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :transactions
+
+  resources :accounts
+
   get 'static_pages/index'
 
   devise_for :users

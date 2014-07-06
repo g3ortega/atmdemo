@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -10,6 +11,12 @@ gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+
+# Bootstrap and Font Awesome for design
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'rails-assets-nanoscroller'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -51,6 +58,18 @@ group :development do
   gem "binding_of_caller"
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  # gem "capybara-webkit"
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

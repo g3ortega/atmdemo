@@ -1,14 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-  <title>Atm</title>
+  <title>ATM - Demo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+<div id="head-nav" class="navbar navbar-default navbar-fixed-top">
+  <%= render 'shared/navigation' %>
+</div>
+
+<div id="cl-wrapper">
+  <% if current_user %>
+  <div class="cl-sidebar">
+    <div class="cl-sidebar">
+      <!-- Collapse Toggle -->
+      <div class="cl-toggle"><i class="fa fa-reorder"></i></div>
+
+      <!-- Menu Items -->
+         <div class="side-user">
+                <div class="avatar"><%= image_tag gravatar_url(current_user) %></div>
+                <div class="info">
+                  <a href="#"><%= current_user.first_name %></a>
+                 <%= image_tag 'state_online.png' %> <span>Online</span>
+                </div>
+        </div>
+      <div class="cl-navblock">
+
+
+        <ul class="cl-vnavigation">
+          <li class="parent open"><a href="#"><i class="fa fa-home"></i><span>Consultas</span></a>
+            <ul class="sub-menu" style="display: block;">
+              <li><a href="index.html">Saldo</a></li>
+              <li><a href="dashboard2.html">Histórico de Transacciones</a></li>
+            </ul>
+          </li>
+          <li class="parent open"><a href="#"><i class="fa fa-home"></i><span>Transferencias</span></a>
+            <ul class="sub-menu" style="display: block;">
+              <li><a href="index.html">Locales</a></li>
+              <li><a href="dashboard2.html">Internacionales</a></li>
+            </ul>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="container-fluid" id="pcont">
+    <div class="page-head">
+      <h2><%= yield(:title) %> </h2>
+    </div>
+
+    <div class="cl-mcont">
+      <%= yield %>
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
