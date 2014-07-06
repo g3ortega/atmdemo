@@ -5,6 +5,7 @@ set :application, 'atmapp'
 
 set :user, 'gerardo'
 set :port, 22
+set :tmp_dir, "/home/gerardo/tmp"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
