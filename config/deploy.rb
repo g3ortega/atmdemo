@@ -3,14 +3,14 @@ lock '3.2.1'
 
 set :application, 'atmapp'
 
-set :user, 'root'
+set :user, 'gerardo'
 set :port, 22
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/#{fetch(:user)}/atmapp"
+set :deploy_to, "/home/#{fetch(:user)}/atmapp"
 set :deploy_via, :remote_cache
 
 # set :repo_url, 'git://bitbucket.org/kakaomedia/ticket_app.git'

@@ -17,7 +17,7 @@ set :rails_env, 'production'
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server '104.131.245.39', user: 'root', roles: %w{web app db}
+server '104.131.245.39', user: 'gerardo', roles: %w{web app db}
 
 
 # Custom SSH Options
