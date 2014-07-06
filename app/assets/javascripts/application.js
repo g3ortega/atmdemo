@@ -16,3 +16,12 @@
 //= require bootstrap
 //= require nanoscroller
 //= require_tree .
+
+$(document).ready(function(){
+    //initialize the javascript
+    App.init();
+    App.dashBoard();
+
+    introJs().setOption('showBullets', false).start();
+
+});
