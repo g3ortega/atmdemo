@@ -22,9 +22,9 @@
 
       <!-- Menu Items -->
          <div class="side-user">
-                <div class="avatar"><%= image_tag gravatar_url(current_user) %></div>
+                <div class="avatar"><a href="<%= root_url %>"> <%= image_tag gravatar_url(current_user) %></a>   </div>
                 <div class="info">
-                  <a href="#"><%= current_user.first_name %></a>
+                  <a href="<%= root_url %>"><%= current_user.first_name %></a>
                  <%= image_tag 'state_online.png' %> <span>Online</span>
                 </div>
         </div>
@@ -35,13 +35,13 @@
           <li class="parent open"><a href="#"><i class="fa fa-home"></i><span>Consultas</span></a>
             <ul class="sub-menu" style="display: block;">
               <li> <%= link_to "Saldo", current_user.account %></li>
-              <li><a href="dashboard2.html">Histórico de Transacciones</a></li>
+              <li> <%= link_to 'Historico de Transacciones', temp_path %>
             </ul>
           </li>
           <li class="parent open"><a href="#"><i class="fa fa-home"></i><span>Transferencias</span></a>
             <ul class="sub-menu" style="display: block;">
-              <li><a href="index.html">Locales</a></li>
-              <li><a href="dashboard2.html">Internacionales</a></li>
+              <li> <%= link_to 'Locales', temp_path %>
+              <li> <%= link_to 'Internacionales', temp_path %>
             </ul>
           </li>
         </ul>
