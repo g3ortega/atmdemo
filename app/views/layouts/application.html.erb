@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>ATM - Demo</title>
+  <title>eBanca | <%= yield(:title)%></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -34,7 +34,7 @@
         <ul class="cl-vnavigation">
           <li class="parent open"><a href="#"><i class="fa fa-home"></i><span>Consultas</span></a>
             <ul class="sub-menu" style="display: block;">
-              <li><a href="index.html">Saldo</a></li>
+              <li> <%= link_to "Saldo", current_user.account %></li>
               <li><a href="dashboard2.html">Histórico de Transacciones</a></li>
             </ul>
           </li>

@@ -60,14 +60,16 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem "spork-rails"
   # gem "capybara-webkit"
 end
 

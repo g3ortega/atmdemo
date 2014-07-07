@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
     </button>
     <!-- Brand Logo -->
-    <a class="navbar-brand" href="#"><span>ATM</span></a>
+    <%= link_to "eBranch", root_path, class: "navbar-brand" %>
   </div>
 
   <!-- Right Menu Side -->
@@ -19,6 +19,8 @@
     </ul>
     <ul class="nav navbar-nav navbar-right user-nav">
       <!-- Right Profile Menu Items -->
+      <li><%= link_to "Ayuda", help_path %></li>
+      <li><%= link_to "Acerca de", about_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right not-nav">
       <!-- Right Menu Notification Items -->

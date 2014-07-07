@@ -1,10 +1,11 @@
 class AccountsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_account, only: [:show, :edit, :update, :destroy]
 
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
+    # @accounts = Account.all
   end
 
   # GET /accounts/1
@@ -65,10 +66,14 @@ class AccountsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_account
       @account = Account.find(params[:id])
+      if @account != current_user.account
+
+        redirect_to current_user.account, notice: 'No tienes permiso para ver la cuenta a la que tratabas acceder'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
-      params.require(:account).permit(:user_id, :amount)
+      params.require(:account).permit(:user_id, :number, :amount)
     end
 end

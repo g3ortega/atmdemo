@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :transactions
 
   resources :accounts
-
-  get 'static_pages/index'
+  get '/help' => 'static_pages#help', as: 'help'
+  get '/about' => 'static_pages#about', as: 'about'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

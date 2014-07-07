@@ -4,11 +4,12 @@
   <strong>User:</strong>
   <%= @account.user_id %>
 </p>
-
+<p>
+  <strong>Number:</strong>
+  <%= @account.number %>
+</p>
 <p>
   <strong>Amount:</strong>
   <%= @account.amount %>
 </p>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
