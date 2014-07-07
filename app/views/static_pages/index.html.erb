@@ -7,7 +7,9 @@
         <div class="personal">
           <h1>Bienvenido a tu sucursal electrónica</h1>
           <p class="description">Haz tus transferencias y consultas en linea, de una manera rápida y sencilla.</p><p>
+          <% unless current_user %>
           <%= link_to "Registrate", new_user_registration_path, class: "btn btn-primary fa fa-check" %>
+          <% end %>
         </p></div>
       </div>
 

@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 
 #Devise for user authentication
 gem 'devise'
+gem 'devise-i18n'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
