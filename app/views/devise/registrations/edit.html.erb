@@ -2,18 +2,38 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%# devise_error_messages! %>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= f.text_field :first_name, class: 'form-control', placeholder: "Nombre" %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.text_field :last_name, class: 'form-control', placeholder: "Apellido" %>
+      </div>
+    </div>
 
-  <div><%= f.label :email, "Correo: " %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= f.email_field :email, class: 'form-control', placeholder: "Correo" %>
+      </div>
+    </div>
 
-  <div><%= f.label :password, "Contraseña: " %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= f.password_field :password, class: 'form-control', placeholder: "Contraseña"%>
+      </div>
+    </div>
 
-  <div><%= f.label :password_confirmation, "Confirmar contraseña: " %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Confirmar Contraseña" %>
+      </div>
+    </div>
 
-  <div><%= f.label :current_password, "Contraseña actual: " %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= f.password_field :current_password, class: 'form-control', placeholder: "Contraseña Actual" %>
+      </div>
+    </div>
 
   <div><%= f.submit "Actualizar" %></div>
 <% end %>
@@ -23,3 +43,7 @@
 <p>No estas contento? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %></p>
 
 <%= link_to "Atrás", :back %>
+
+
+
+
