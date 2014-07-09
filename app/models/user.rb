@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true, length: { maximum: 50 }
   validates :first_name, presence: true, length: { maximum: 50 }
 
-  validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+  validates :email, format: { with: VALID_EMAIL_REGEX }
   # validates_length_of :last_name,
 
   private
