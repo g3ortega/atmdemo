@@ -12,6 +12,11 @@ class UsersController < ApplicationController
   def show
   end
 
+  # GET /recent_transactions
+  def transactions
+   @recent_transactions = current_user.transactions.most_recent
+  end
+
   # GET /users/new
   def new
     @user = User.new

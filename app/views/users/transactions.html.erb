@@ -1,0 +1,28 @@
+<h1>Últimas transacciones que haz realizado</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Monto</th>
+    <th>Concepto</th>
+    <th>Cuenta de destino</th>
+    <th>Fecha que se realizó</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @recent_transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.concept %></td>
+        <td><%= transaction.account.number %></td>
+        <td><%= time_ago_in_words(transaction.created_at)  %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Realizar Transferencia', new_transaction_path %>

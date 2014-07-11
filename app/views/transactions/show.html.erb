@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Amount:</strong>
+  <strong>Monto:</strong>
   <%= @transaction.amount %>
 </p>
 
 <p>
-  <strong>Concept:</strong>
+  <strong>Concepto:</strong>
   <%= @transaction.concept %>
 </p>
 
 <p>
-  <strong>Account:</strong>
-  <%= @transaction.account_id %>
+  <strong>Cuenta:</strong>
+  <%= @transaction.account.number%>
 </p>
 
 <%= link_to 'Edit', edit_transaction_path(@transaction) %> |

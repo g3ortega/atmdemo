@@ -6,8 +6,18 @@ es:
       user:
         first_name: "Nombre"
         last_name: "Apellido"
+        role: "Rol"
         password: "Contraseña"
         email: "Correo"
+  activerecord:
+    models:
+      transaction: "Transacción"
+    attributes:
+      transaction:
+        concept: "Concepto"
+        account_number: "Número de cuenta"
+        amount: "Monto"
+        account: "Cuenta"
   date:
     abbr_day_names:
     - dom

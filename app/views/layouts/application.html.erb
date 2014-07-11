@@ -34,14 +34,15 @@
         <ul class="cl-vnavigation">
           <li class="parent open"><a href="#"><i class="fa fa-home"></i><span>Consultas</span></a>
             <ul class="sub-menu" style="display: block;">
+              <li> <%= link_to "Información de Usuario y Sesión", user_path(current_user) %></li>
               <li> <%= link_to "Saldo", current_user.account %></li>
-              <li> <%= link_to 'Historico de Transacciones', transactions_path %>
+
+              <li> <%= link_to 'Historico de Transacciones', transactions_user_path(current_user) %>
             </ul>
           </li>
           <li class="parent open"><a href="#"><i class="fa fa-home"></i><span>Transferencias</span></a>
             <ul class="sub-menu" style="display: block;">
-              <li> <%= link_to 'Locales', temp_path %>
-              <li> <%= link_to 'Internacionales', temp_path %>
+              <li> <%= link_to 'Nueva Transferencia', new_transaction_path %>
             </ul>
           </li>
         </ul>

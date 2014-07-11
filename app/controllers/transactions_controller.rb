@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.most_recent
   end
 
   # GET /transactions/1
@@ -29,15 +29,18 @@ class TransactionsController < ApplicationController
 
 
       respond_to do |format|
-      if @transaction.money_transfer
+      if @transaction.valid?
 
-          if @transaction.save
-            format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
+          if @transaction.money_transfer
+          # if @transaction.save
+            format.html { redirect_to @transaction, notice: 'La transacción ha sido creada exitosamente.' }
             format.json { render :show, status: :created, location: @transaction }
           else
             format.html { render :new }
             format.json { render json: @transaction.errors, status: :unprocessable_entity }
           end
+      else
+        format.html { render :new, notice: 'La transacción no es válida.' }
       end
     end
   end
