@@ -12,6 +12,9 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
+# New Relic Integration
+gem 'newrelic_rpm'
+
 # Bootstrap and Font Awesome for design
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
@@ -46,6 +49,9 @@ gem 'devise-i18n'
 # Use unicorn as the app server
 gem 'unicorn'
 
+group :development do
+  gem 'brakeman', :require => false
+end
 
 group :development do
   # Use Capistrano for deployment
@@ -62,6 +68,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :test do

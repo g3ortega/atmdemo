@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Transaction, :type => :model do
-  before { @user = User.new(first_name: "Example", last_name: "User", email: "user@example.com", password: "12345678") }
+  before { @user = User.new(first_name: "Example", last_name: "User", email: "user@example.com", password: "12345678", password_confirmation: "12345678") }
   subject { @user }
   it { should respond_to(:first_name) }
   it { should respond_to(:last_name) }
@@ -53,5 +53,16 @@ RSpec.describe Transaction, :type => :model do
     end
     it { should_not be_valid }
   end
+
+  describe "cuando la contraseña no esté presente" do
+    before { @user.password = @user.password_confirmation = " " }
+    it { should_not be_valid }
+  end
+
+  describe "cuando la contraseña no coincide con la confirmación" do
+    before { @user.password_confirmation = "asdsadsa" }
+    it { should_not be_valid }
+  end
+
 
 end
