@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
     <%= f.label :amount %><br>
     <%= f.text_field :amount %>
@@ -20,8 +21,8 @@
     <%= f.text_field :concept %>
   </div>
   <div class="field">
-    <%= f.label :account_id %><br>
-    <%= f.number_field :account_id %>
+    <%= f.label :account_number %><br>
+    <%= f.number_field :account_number %>
   </div>
   <div class="actions">
     <%= f.submit %>

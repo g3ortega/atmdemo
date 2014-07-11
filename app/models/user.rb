@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   has_one :account
+  has_many :transactions
 
-  before_save :create_account
+  before_create :create_account
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

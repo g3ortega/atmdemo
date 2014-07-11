@@ -27,13 +27,17 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(transaction_params)
 
-    respond_to do |format|
-      if @transaction.save
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @transaction }
-      else
-        format.html { render :new }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+
+      respond_to do |format|
+      if @transaction.money_transfer
+
+          if @transaction.save
+            format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
+            format.json { render :show, status: :created, location: @transaction }
+          else
+            format.html { render :new }
+            format.json { render json: @transaction.errors, status: :unprocessable_entity }
+          end
       end
     end
   end
@@ -70,6 +74,6 @@ class TransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transaction_params
-      params.require(:transaction).permit(:amount, :concept, :account_id)
+      params.require(:transaction).permit(:amount, :concept, :user_id, :account_number)
     end
 end
